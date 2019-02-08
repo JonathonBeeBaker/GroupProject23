@@ -25,6 +25,7 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
 
   imageURL: {
     type: String,
+    
     required: true
   },
 
