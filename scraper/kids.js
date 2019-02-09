@@ -5,14 +5,14 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// This function will scrape the NYTimes website
+// This function will scrape the fat brain toys website
 var scrape = function() {
   // Scrape the NYTimes website
-  return axios.get("http://www.nytimes.com").then(function(res) {
+  return axios.get("https://www.fatbraintoys.com/").then(function(res) {
     var $ = cheerio.load(res.data);
     console.log("scraping");
-    // Make an empty array to save our article info
-    var articles = [];
+    // Make an empty array to save our products info
+    var products = [];
 
     // Now, find and loop through each element that has the "css-180b3ld" class
     // (i.e, the section holding the articles)
@@ -50,10 +50,10 @@ var scrape = function() {
         var dataToAdd = {
           headline: headNeat,
           summary: sumNeat,
-          url: "https://www.nytimes.com" + url
+          url: "https://www.fatbraintoys.com/" + url
         };
 
-        articles.push(dataToAdd);
+        products.push(dataToAdd);
       }
     });
     return articles;
