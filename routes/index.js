@@ -13,7 +13,7 @@ module.exports = function(app){
         
         );
        
-        res.json('working')
+        res.json('working');
     
 
     });
