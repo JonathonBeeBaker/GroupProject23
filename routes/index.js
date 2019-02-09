@@ -18,5 +18,16 @@ module.exports = function(app){
 
     });
 
+
+    app.get('/api/scrape/kids', function(rec, res){
+        const scraper = require('../scraper/kids');
+        scraper(function (products) {
+            res.json(products);
+        });
+
+    });
+
 }
+
+
 
