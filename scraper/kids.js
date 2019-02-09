@@ -1,24 +1,19 @@
-// scrape script
-// =============
-
 // Require axios and cheerio, making our scrapes possible
 var axios = require("axios");
 var cheerio = require("cheerio");
 
 // This function will scrape the fat brain toys website
-var scrape = function() {
+var scrape = function(cb) {
   // Scrape the NYTimes website
-  return axios.get("https://www.fatbraintoys.com/").then(function(res) {
+  return axios.get("https://www.fatbraintoys.com/specials/top_sellers.cfm").then(function(res) {
     var $ = cheerio.load(res.data);
     console.log("scraping");
     // Make an empty array to save our products info
     var products = [];
-
     // Now, find and loop through each element that has the "css-180b3ld" class
     // (i.e, the section holding the articles)
-    $("div.css-1100km").each(function(i, element) {
+    $(".image-product-list").each(function(i, element) {
       // In each article section, we grab the child with the class story-heading
-
       // Then we grab the inner text of the this element and store it
       // to the head variable. This is the article headline
       var head = $(this)
@@ -55,9 +50,12 @@ var scrape = function() {
 
         products.push(dataToAdd);
       }
+      //dDLETE ME
+      products.push({});
     });
-    return articles;
-  });
+    //return products;
+    cb(products);
+  }).catch(err => console.log(err) && cb("err"));
 };
 
 // Export the function, so other files in our backend can use it
