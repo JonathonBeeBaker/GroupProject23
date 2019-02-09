@@ -3,8 +3,9 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const conn = MONGODB_URI ||  "mongodb://localhost/project23";
-mongoose.connect(conn);
+const mongo_uri= process.env.MONGODB_URI || "mongodb://localhost/project23"
+require('./routes')(app);
+mongoose.connect(mongo_uri);
 
 
 // Serve up static assets (usually on heroku)

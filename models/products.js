@@ -1,6 +1,5 @@
 /////////////////////////////////////////////// /* Imports */ //////////////////////////////////////////////////////////
 let mongoose = require('mongoose');
-
 /////////////////////////////////////////////// /* Initialize */ //////////////////////////////////////////////////////////
 let Schema = mongoose.Schema; // Save a Reference to the Schema Constructor
 
@@ -46,6 +45,6 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
 /////////////////////////////////////////////// /* Export */ //////////////////////////////////////////////////////////
 
 // This creates our model from the above schema, using mongoose's model method
-let Article = mongoose.model("Article", ArticleSchema);
+let products = mongoose.model("Product", productsSchema);
 
-module.exports = Article; // Export the Article Model
+module.exports = products; // Export the Article Model
