@@ -15,7 +15,7 @@ class DemoProductList extends Component {
     render() {
         return (
             <div>
-                {this.state.products.map(item => <div>{item.item}</div>)}
+                {this.state.products.map((item, key) => <div key={key}>{item.item}</div>)}
             </div>
         );
     }
