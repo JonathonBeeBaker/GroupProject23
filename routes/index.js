@@ -41,6 +41,10 @@ module.exports = function(app){
         db.products.find({category: 'newparent'}).then(products => res.json(products));
     });
 
+    app.get('/api/products/teens', (req, res) => {
+        db.products.find({category: 'teens'}).then(products => res.json(products));
+    });
+
     app.get('/api/scrape/teens', function(rec, res){
         const scraper = require('../scraper/teens');
         scraper(function (products) {
