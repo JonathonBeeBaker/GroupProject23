@@ -7,7 +7,7 @@ class DemoProductList extends Component {
     };
 
     componentDidMount() {
-        axios.get('/api/products/newparent').then(res => {
+        axios.get('/api/products/' + this.props.category).then(res => {
             this.setState({products: res.data});
         })
     }
@@ -15,7 +15,13 @@ class DemoProductList extends Component {
     render() {
         return (
             <div>
-                {this.state.products.map((item, key) => <div key={key}>{item.item}</div>)}
+                {this.state.products.map((item, key) => (
+                    <a target="_blank" key={key} href={item.url}>
+                        <img src={item.image} key={key} />
+                        <div>{item.item}</div>
+                    </a>
+                
+                ))}
             </div>
         );
     }
