@@ -27,6 +27,20 @@ module.exports = function(app){
 
     });
 
+    app.get('/api/scrape/newparents', (req, res) => {
+        require('../scraper/newparents')(products => {
+            products.map(item => {
+                let product = new db.products(item);
+                product.save();
+            });
+            res.json('Done');
+        });
+    });
+
+    app.get('/api/products/newparent', (req, res) => {
+        db.products.find({category: 'newparent'}).then(products => res.json(products));
+    });
+
     app.get('/api/scrape/teens', function(rec, res){
         const scraper = require('../scraper/teens');
         scraper(function (products) {

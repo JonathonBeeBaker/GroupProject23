@@ -1,9 +1,5 @@
-/////////////////////////////////////////////// /* Imports */ //////////////////////////////////////////////////////////
 let mongoose = require('mongoose');
-/////////////////////////////////////////////// /* Initialize */ //////////////////////////////////////////////////////////
 let Schema = mongoose.Schema; // Save a Reference to the Schema Constructor
-
-/////////////////////////////////////////////// /* Model*/ //////////////////////////////////////////////////////////
 
 let productsSchema = new Schema({ // Create a New Schema Constructor for News Article
 
@@ -18,7 +14,7 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
   },
 
   item: {
-    type: String,
+    type: String,  
     required: true
   },
 
@@ -28,9 +24,6 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
   }
 });
 
-/////////////////////////////////////////////// /* Export */ //////////////////////////////////////////////////////////
-
-// This creates our model from the above schema, using mongoose's model method
 let products = mongoose.model("Product", productsSchema);
 
-module.exports = products; // Export the Article Model
+module.exports = products;
