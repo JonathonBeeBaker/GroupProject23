@@ -9,8 +9,9 @@ module.exports = function (callback) {
             let product = {};
             product.url = $(el).find('.product-list-item-thumbnail a').attr('href');
             product.image = $(el).find('img').attr('src');
+            product.price = $(el).find('.regPrice').text().trim();
             product.category = 'newparent';
-            product.name = $(el).find('h2.product-list-item-title').text().trim();
+            product.item = $(el).find('h2.product-list-item-title').text().trim();
             console.log(product);
             products.push(product);
         });

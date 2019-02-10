@@ -13,9 +13,8 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
     required: true
   },
 
-  name: {
-    type: String,
-    
+  item: {
+    type: String,  
     required: true
   },
 
