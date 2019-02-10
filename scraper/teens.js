@@ -5,7 +5,7 @@ var cheerio = require("cheerio");
 // This function will scrape the fat brain toys website
 var scrape = function(cb) {
   // Scrape the fatbraintoys website
-  return axios.get("https://www.fatbraintoys.com/specials/top_sellers.cfm").then(function(res) {
+  return axios.get("https://www.zumiez.com/catalogsearch/result/?d=4043&q=teen+clothing").then(function(res) {
     var $ = cheerio.load(res.data);
     console.log("scraping");
     // Make an empty array to save our products info
@@ -31,7 +31,7 @@ var scrape = function(cb) {
 
         var dataToAdd = {
           item: item,
-          url: "https://www.fatbraintoys.com" + url,
+          url: "https://www.zumies.com" + url,
           image: img,
           price: price
         };
