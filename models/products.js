@@ -1,18 +1,9 @@
-/////////////////////////////////////////////// /* Imports */ //////////////////////////////////////////////////////////
 let mongoose = require('mongoose');
-/////////////////////////////////////////////// /* Initialize */ //////////////////////////////////////////////////////////
 let Schema = mongoose.Schema; // Save a Reference to the Schema Constructor
-
-/////////////////////////////////////////////// /* Model*/ //////////////////////////////////////////////////////////
 
 let productsSchema = new Schema({ // Create a New Schema Constructor for News Article
 
-  headline: {
-    type: String,
-    required: true
-  },
-
-  summary: {
+  image: {
     type: String,
     required: true
   },
@@ -22,29 +13,17 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
     required: true
   },
 
-  imageURL: {
-    type: String,
-    
+  item: {
+    type: String,  
     required: true
   },
 
-  slug: {
-    type: String
-  },
+  category: {
+    type: String,
+    require: true
+  }
+});
 
-  // `comments` is an object that stores a Note id
-  // The ref property links the ObjectId to the Note model
-  // This allows us to populate the Article with an associated Comment
-  note: [{
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  }]
-
-}); // End of New Schema
-
-/////////////////////////////////////////////// /* Export */ //////////////////////////////////////////////////////////
-
-// This creates our model from the above schema, using mongoose's model method
 let products = mongoose.model("Product", productsSchema);
 
-module.exports = products; // Export the Article Model
+module.exports = products;
