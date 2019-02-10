@@ -37,6 +37,10 @@ module.exports = function(app){
         });
     });
 
+    app.get('/api/products/newparent', (req, res) => {
+        db.products.find({category: 'newparent'}).then(products => res.json(products));
+    });
+
 }
 
 
