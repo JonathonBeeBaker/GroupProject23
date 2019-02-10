@@ -27,6 +27,16 @@ module.exports = function(app){
 
     });
 
+    app.get('/api/scrape/newparents', (req, res) => {
+        require('../scraper/newparents')(products => {
+            products.map(item => {
+                let product = new db.products(item);
+                product.save();
+            });
+            res.json('Done');
+        });
+    });
+
 }
 
 
