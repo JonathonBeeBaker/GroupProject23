@@ -7,12 +7,7 @@ let Schema = mongoose.Schema; // Save a Reference to the Schema Constructor
 
 let productsSchema = new Schema({ // Create a New Schema Constructor for News Article
 
-  headline: {
-    type: String,
-    required: true
-  },
-
-  summary: {
+  image: {
     type: String,
     required: true
   },
@@ -22,25 +17,16 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
     required: true
   },
 
-  imageURL: {
+  item: {
     type: String,
-    
     required: true
   },
 
-  slug: {
-    type: String
-  },
-
-  // `comments` is an object that stores a Note id
-  // The ref property links the ObjectId to the Note model
-  // This allows us to populate the Article with an associated Comment
-  note: [{
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  }]
-
-}); // End of New Schema
+  category: {
+    type: String,
+    require: true
+  }
+});
 
 /////////////////////////////////////////////// /* Export */ //////////////////////////////////////////////////////////
 
