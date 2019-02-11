@@ -14,7 +14,12 @@ class App extends Component {
             <br />
             <br />
             <br />
-            <Button color="primary">primary</Button>{' '}
+            <Button className="btnDark" color="dark">KIDS</Button>{' '}
+            <Button className="btnDark" color="dark">TEENS</Button>{' '}
+            <Button className="btnDark" color="dark">ELDERLY</Button>{' '}
+            <br />
+            <br />
+            <br />
         <KidsProductList category="kids" /> 
       </div>
       
