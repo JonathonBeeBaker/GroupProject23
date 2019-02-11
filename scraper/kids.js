@@ -33,7 +33,8 @@ var scrape = function(cb) {
           item: item,
           url: "https://www.fatbraintoys.com" + url,
           image: img,
-          price: price
+          price: price,
+          category: "kids",
         };
 
         products.push(dataToAdd);
