@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import DemoProductList from "./components/DemoProductList";
 
+
 class App extends Component {
   render() {
     return (
@@ -13,6 +14,9 @@ class App extends Component {
         </div>
         <DemoProductList category="newparent" />
       </div>
+  
+
+      
     );
   }
 }
