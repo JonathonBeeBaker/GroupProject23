@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class DemoProductList extends Component {
+class KidsProductList extends Component {
     state = {
         products: []
     };
@@ -19,7 +19,6 @@ class DemoProductList extends Component {
                     <a target="_blank" key={key} href={item.url}>
                         <img src={item.image} key={key} />
                         <div>{item.item}</div>
-                        const Greeting = () => <h1>Hello World today!</h1>;
                     </a>
                 
                 ))}
@@ -29,5 +28,4 @@ class DemoProductList extends Component {
 }
 
 
-
-export default DemoProductList;
+export default KidsProductList;
