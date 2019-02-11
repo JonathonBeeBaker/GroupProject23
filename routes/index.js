@@ -45,6 +45,10 @@ module.exports = function(app){
         db.products.find({category: 'newparent'}).then(products => res.json(products));
     });
 
+    app.get('/api/products/teens', (req, res) => {
+        db.products.find({category: 'teens'}).then(products => res.json(products));
+    });
+
     app.get('/api/products/kids', (req, res) => {
         db.products.find({category: 'kids'}).then(products => res.json(products));
     });
@@ -52,7 +56,11 @@ module.exports = function(app){
     app.get('/api/scrape/teens', function(rec, res){
         const scraper = require('../scraper/teens');
         scraper(function (products) {
-            res.json(products);
+            products.map(function(item) {
+                const product = new db.products(item);
+                product.save();
+            }) 
+            res.json('Done');
         });
 
     });

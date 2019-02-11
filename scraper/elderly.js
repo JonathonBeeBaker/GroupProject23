@@ -2,10 +2,10 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// This function will scrape the Zumies website
+// This function will scrape the Heavy website
 var scrape = function(cb) {
-  // Scrape the fatbraintoys website
-  return axios.get("https://www.zumiez.com/catalogsearch/result/?d=4043&q=teen+clothing").then(function(res) {
+  // Scrape the Heavy website
+  return axios.get("https://heavy.com/gifts/2018/10/gifts-for-seniors/").then(function(res) {
     var $ = cheerio.load(res.data);
     console.log("scraping");
     // Make an empty array to save our products info
@@ -17,12 +17,12 @@ var scrape = function(cb) {
       // Then we grab the inner text of the this element and store it
       // to the head variable. This is the article headline
       var item = $(element)
-        .find(".product-name")
+        .find("c-product-card")
         .text()
         .trim();
-    var url = $(this).find('.product-name').attr('href');
-    var img = $(this).find('.product-image img').attr('src');
-    var price = $(this).find('.sale-price').text().trim();
+    var url = $(this).find("c-product-card-label").parent("a").attr("href");
+    var img = $(this).find("c-product-card_image-frame img").attr("src");
+    var price = $(this).find("js.dynamic-price").text().trim();
     console.log(img);
       // So long as our headline and sum and url aren't empty or undefined, do the following
       if (item) {
@@ -31,10 +31,10 @@ var scrape = function(cb) {
 
         var dataToAdd = {
           item: item,
-          url: "https://www.zumies.com" + url,
+          url: "https://www.heavy.com" + url,
           image: img,
           price: price,
-          category: 'teens'
+          category: "elderly"
         };
 
         products.push(dataToAdd);
