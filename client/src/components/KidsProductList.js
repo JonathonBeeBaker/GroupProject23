@@ -19,8 +19,6 @@ class KidsProductList extends Component {
                     <a target="_blank" key={key} href={item.url}>
                         <img src={item.image} key={key} />
                         <div>{item.item}</div>
-                        <div>{item.category}</div>
-                       
                     </a>
                 
                 ))}
@@ -28,5 +26,6 @@ class KidsProductList extends Component {
         );
     }
 }
+
 
 export default KidsProductList;

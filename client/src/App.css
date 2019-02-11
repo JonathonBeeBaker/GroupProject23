@@ -8,17 +8,24 @@
 }
 
 .App-header {
-  background-color: #222;
+  font-family: 'Overpass Mono', monospace;
+  background-color: rgb(0, 65, 73);
   height: 150px;
   padding: 20px;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
-}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.btnDark {
+  margin: 20px;
+  width: 120px !important;
+  font-family: 'Overpass Mono', monospace;
+}
+
+

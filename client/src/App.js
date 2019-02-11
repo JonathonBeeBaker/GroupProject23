@@ -1,18 +1,30 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import DemoProductList from "./components/DemoProductList";
+import KidsProductList from "./components/KidsProductList";
+import { Button } from 'reactstrap';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <DemoProductList category="newparent" />
+          <h1>GIFTBOT</h1>         
+          </div>
+            <br />
+            <br />
+            <br />
+            <Button className="btnDark" color="dark">KIDS</Button>{' '}
+            <Button className="btnDark" color="dark">TEENS</Button>{' '}
+            <Button className="btnDark" color="dark">ELDERLY</Button>{' '}
+            <br />
+            <br />
+            <br />
+        <KidsProductList category="kids" /> 
       </div>
+      
+
+      
     );
   }
 }
