@@ -23,7 +23,7 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mongoose": "^5.4.11"
   }

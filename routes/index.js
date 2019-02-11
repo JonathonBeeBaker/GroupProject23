@@ -54,17 +54,21 @@ module.exports = function(app){
             }) 
             res.json('Done');
         });
-
+        
     });
-
-
-    app.get('/api/scrape/elderly', function(rec, res){
-        const scraper = require('../scraper/teens');
-        scraper(function (products) {
-            res.json(products);
+    app.get("/api/scrape/elderly", (req, res) => {
+        require("../scraper/elderly")(products => {
+            products.map(item => {
+                let product = new db.products(item);
+                product.save();
+            });    
+                res.json("Done");
         });
-
+    app.get("/api/products/elderly", (req, res) => {
+            db.products.find({category: "elderly"}).then(products => res.json(products));
+        });   
     });
+    
 }
 
 

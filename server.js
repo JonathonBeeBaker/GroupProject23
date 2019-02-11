@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const mongo_uri= process.env.MONGODB_URI || "mongodb://localhost/project23"
 require('./routes')(app);
-mongoose.connect(mongo_uri);
+mongoose.connect(mongo_uri, { useNewUrlParser: true });
 
 
 // Serve up static assets (usually on heroku)
