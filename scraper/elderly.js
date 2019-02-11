@@ -12,17 +12,17 @@ var scrape = function(cb) {
     var products = [];
     // Now, find and loop through each element that has the "css-180b3ld" class
     // (i.e, the section holding the articles)
-    $(".item").each(function(i, element) {
+    $(".c-product-card").each(function(i, element) {
       // In each article section, we grab the child with the class story-heading
       // Then we grab the inner text of the this element and store it
       // to the head variable. This is the article headline
       var item = $(element)
-        .find("c-product-card")
+        .find(".c-product-card__title")
         .text()
         .trim();
-    var url = $(this).find("c-product-card-label").parent("a").attr("href");
-    var img = $(this).find("c-product-card_image-frame img").attr("src");
-    var price = $(this).find("js.dynamic-price").text().trim();
+    var url = $(this).find(".c-product-card__shop-link").attr("href");
+    var img = $(this).find(".c-product-card__image-frame img").attr("data-src");
+    var price = $(this).find(".js-dynamic-price").text().trim();
     console.log(img);
       // So long as our headline and sum and url aren't empty or undefined, do the following
       if (item) {
@@ -31,7 +31,7 @@ var scrape = function(cb) {
 
         var dataToAdd = {
           item: item,
-          url: "https://www.heavy.com" + url,
+          url: url,
           image: img,
           price: price,
           category: "elderly"

@@ -70,13 +70,13 @@ module.exports = function(app){
                 let product = new db.products(item);
                 product.save();
             });    
-                res.json("Done");
+                res.json(products);
         });
-    app.get("/api/products/elderly", (req, res) => {
-            db.products.find({category: "elderly"}).then(products => res.json(products));
-        });   
+     
     });
-    
+    app.get("/api/products/elderly", (req, res) => {
+        db.products.find({category: "elderly"}).then(products => res.json(products));
+    });  
 }
 
 
