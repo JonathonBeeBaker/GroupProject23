@@ -8,6 +8,7 @@ const Navigation = () => {
     return (
         <Container>
             <Row>
+                <Col></Col>
                 <Col>        
                     <NavLink to="/kidsproductlist"><Button outline color="success" size="lg">KIDS</Button></NavLink>
                 </Col>
@@ -17,7 +18,8 @@ const Navigation = () => {
                 </Col>
                 <Col>   
                     <NavLink to="/elderlyproductlist"><Button outline color="secondary" size="lg">ELDERLY</Button></NavLink>
-                </Col>     
+                </Col>  
+                <Col></Col>   
             </Row>
         </Container>
         
