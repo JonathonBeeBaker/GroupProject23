@@ -3,11 +3,13 @@ import "./App.css";
 import Home from "./components/Home";
 import KidsProductList from "./components/KidsProductList";
 import TeensProductList from "./components/TeensProductList";
-import {BrowserRouter, Route} from "react-router-dom";
+import ElderlyProductList from"./components/ElderlyProductList";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import { Container, Row, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav,
   NavItem, NavLink, UncontrolledDropdown, DropdownToggle, 
   DropdownMenu, DropdownItem, } from 'reactstrap';
 import { Button } from 'reactstrap';
+import Error from "./components/Error";
 
 
 class App extends Component {
@@ -21,23 +23,6 @@ class App extends Component {
               <NavItem>
                 <NavLink href="/components/savedSelections.js">Saved Selections</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
             </Nav>        
         </Navbar>
         <br />
@@ -58,18 +43,12 @@ class App extends Component {
             </Row>
           </Container>
           <br />
-          <Container>
-            <Row>
-              <Col>
-                <Route path="/" component={Home} />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-            <Route path="/kidsproductlist" component={KidsProductList} />
-              </Col>
-            </Row>
-          </Container>
+              <Switch>
+              <Route path="/" component={Home} exact />
+              <Route path="/kidsproductlist" component={KidsProductList}  />
+              <Route path="/teensproductlist" component={TeensProductList}  />
+              <Route path="/elderlyproductlist" component={ElderlyProductList}  />   
+              </Switch>
           </div>
          
         </BrowserRouter>

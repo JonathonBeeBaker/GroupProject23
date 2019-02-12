@@ -8,7 +8,8 @@ class KidsProductList extends Component {
     };
 
     componentDidMount() {
-        axios.get('/api/products/' + this.props.category).then(res => {
+        console.log('/api/products/' + this.props.category);
+        axios.get('/api/products/kids').then(res => {
             this.setState({products: res.data});
         })
     }

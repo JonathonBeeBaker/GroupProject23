@@ -7,7 +7,7 @@ class TeensProductList extends Component {
     };
 
     componentDidMount() {
-        axios.get('/api/products/' + this.props.category).then(res => {
+        axios.get('/api/products/teens' + this.props.category).then(res => {
             this.setState({products: res.data});
         })
     }
