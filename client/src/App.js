@@ -16,7 +16,7 @@ class App extends Component {
     return (
         <BrowserRouter>
           <div>
-          <Navbar color="info" light expand="md">
+          <Navbar color="info" dark expand="md">
           <NavbarBrand href="/"><h1>GIFTBOT</h1></NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
