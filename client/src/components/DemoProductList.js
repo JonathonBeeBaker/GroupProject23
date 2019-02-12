@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ProductLink from './ProductLink';
 
 class DemoProductList extends Component {
     state = {
@@ -12,15 +13,15 @@ class DemoProductList extends Component {
         })
     }
 
+    addToFavorites() {
+        console.log('TODO: add to favorites');
+    }
+
     render() {
         return (
             <div>
                 {this.state.products.map((item, key) => (
-                    <a target="_blank" key={key} href={item.url}>
-                        <img src={item.image} key={key} />
-                        <div>{item.item}</div>
-                    </a>
-                
+                    <ProductLink item={item} key={key} onAddToFavorites={this.addToFavorites} />
                 ))}
             </div>
         );
