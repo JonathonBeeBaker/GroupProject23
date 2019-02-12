@@ -21,7 +21,12 @@ let productsSchema = new Schema({ // Create a New Schema Constructor for News Ar
   category: {
     type: String,
     require: true
-  }
+  },
+
+  price: {
+    type: String,
+    require: true
+  },
 });
 
 let products = mongoose.model("Product", productsSchema);

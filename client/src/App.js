@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import KidsProductList from "./components/KidsProductList";
+import TeensProductList from "./components/TeensProductList";
 import { Button } from 'reactstrap';
 
 
@@ -9,7 +10,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>GIFTBOT</h1>         
+          <h1>GIFTBOT</h1> 
+          <br />
+          <h3>Easy gift ideas</h3>        
           </div>
             <br />
             <br />
@@ -21,6 +24,7 @@ class App extends Component {
             <br />
             <br />
         <KidsProductList category="kids" /> 
+        <TeensProductList category="teens" />
       </div>
       
 
