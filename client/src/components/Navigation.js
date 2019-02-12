@@ -1,10 +1,27 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
+import { Container, Row, Col, Button } from 'reactstrap';
+import "./Style.css";
+
 
 const Navigation = () => {
     return (
-        <div>
-            Navigation;
-        </div>
+        <Container>
+            <Row>
+                <Col>        
+                    <NavLink to="/kidsproductlist"><Button outline color="success" size="lg">KIDS</Button></NavLink>
+                </Col>
+                
+                <Col>     
+                    <NavLink to="/teensproductlist"><Button outline color="primary" size="lg">TEENS</Button> </NavLink>
+                </Col>
+                <Col>   
+                    <NavLink to="/elderlyproductlist"><Button outline color="secondary" size="lg">ELDERLY</Button></NavLink>
+                </Col>     
+            </Row>
+        </Container>
+        
+           
     );
 
 };
@@ -12,3 +29,4 @@ const Navigation = () => {
 
 
 export default Navigation;
+

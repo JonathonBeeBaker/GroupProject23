@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./Style.css";
 
 
 class ElderlyProductList extends Component {
@@ -9,7 +10,7 @@ class ElderlyProductList extends Component {
 
     componentDidMount() {
         console.log('/api/products/' + this.props.category);
-        axios.get('/api/products/kids').then(res => {
+        axios.get('/api/products/elderly').then(res => {
             this.setState({products: res.data});
         })
     }

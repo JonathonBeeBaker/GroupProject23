@@ -5,11 +5,11 @@ import KidsProductList from "./components/KidsProductList";
 import TeensProductList from "./components/TeensProductList";
 import ElderlyProductList from"./components/ElderlyProductList";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import { Container, Row, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav,
-  NavItem, NavLink, UncontrolledDropdown, DropdownToggle, 
-  DropdownMenu, DropdownItem, } from 'reactstrap';
+import { Container, Row, Col, Navbar, NavbarBrand, Nav,
+  NavItem, NavLink,  } from 'reactstrap';
 import { Button } from 'reactstrap';
 import Error from "./components/Error";
+import Navigation from "./components/Navigation";
 
 
 class App extends Component {
@@ -29,26 +29,19 @@ class App extends Component {
         <br />
         <br />
       
-          <Container>
-            <Row>
-                <Col>
-                <Button color="dark">KIDS</Button>{' '}
-                </Col>
-                <Col>
-                <Button color="dark">TEENS</Button>{' '}
-                </Col>
-                <Col>
-                <Button color="dark">ELDERLY</Button>{' '}
-                </Col>
-            </Row>
-          </Container>
+         
           <br />
-              <Switch>
-              <Route path="/" component={Home} exact />
-              <Route path="/kidsproductlist" component={KidsProductList}  />
-              <Route path="/teensproductlist" component={TeensProductList}  />
-              <Route path="/elderlyproductlist" component={ElderlyProductList}  />   
-              </Switch>
+              <Navigation />
+              <br />
+              <br />
+              <br />
+                <Switch>
+                  <Route path="/" component={Home} exact />
+                  <Route path="/kidsproductlist" component={KidsProductList}  />
+                  <Route path="/teensproductlist" component={TeensProductList}  />
+                  <Route path="/elderlyproductlist" component={ElderlyProductList}  /> 
+                  <Route component={Error} />  
+                </Switch>
           </div>
          
         </BrowserRouter>
