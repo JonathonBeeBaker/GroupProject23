@@ -6,8 +6,7 @@ import TeensProductList from "./components/TeensProductList";
 import ElderlyProductList from"./components/ElderlyProductList";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import { Container, Row, Col, Navbar, NavbarBrand, Nav,
-  NavItem, NavLink,  } from 'reactstrap';
-import { Button } from 'reactstrap';
+        NavItem, NavLink,  } from 'reactstrap';
 import Error from "./components/Error";
 import Navigation from "./components/Navigation";
 

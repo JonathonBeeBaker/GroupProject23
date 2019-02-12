@@ -1,0 +1,34 @@
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema; // Save a Reference to the Schema Constructor
+
+let userSchema = new Schema({ // Create a New Schema Constructor for News Article
+
+  image: {
+    type: String,
+    required: true
+  },
+
+  url: {
+    type: String,
+    required: true
+  },
+
+  item: {
+    type: String,  
+    required: true
+  },
+
+  category: {
+    type: String,
+    require: true
+  },
+
+  price: {
+    type: String,
+    require: true
+  },
+});
+
+let user = mongoose.model("Product", productsSchema);
+
+module.exports = user;

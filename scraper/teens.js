@@ -4,6 +4,7 @@ var cheerio = require("cheerio");
 
 // This function will scrape the Zumies website
 var scrape = function(cb) {
+  console.log("beginning")
   // Scrape the fatbraintoys website
   return axios.get("https://www.zumiez.com/catalogsearch/result/?d=4043&q=teen+clothing").then(function(res) {
     var $ = cheerio.load(res.data);

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 class KidsProductList extends Component {
     state = {
         products: []
@@ -15,10 +14,8 @@ class KidsProductList extends Component {
     }
 
     render() {
-        return (
-            
-            <div>
-                
+        return (           
+            <div>              
                     {this.state.products.slice(0, 6).map((item, key) => (
                         <a target="_blank" key={key} href={item.url}>
                             <img src={item.image} key={key} />
@@ -26,8 +23,7 @@ class KidsProductList extends Component {
                             <div>{item.category}</div>
                             <div>{item.price}</div>
                         </a>                             
-                    ))}
-                
+                    ))}                
             </div>
             
         );

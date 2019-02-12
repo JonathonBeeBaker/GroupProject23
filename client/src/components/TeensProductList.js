@@ -7,6 +7,7 @@ class TeensProductList extends Component {
     };
 
     componentDidMount() {
+        console.log('/api/products/' + this.props.category);
         axios.get('/api/products/teens' + this.props.category).then(res => {
             this.setState({products: res.data});
         })
@@ -19,6 +20,8 @@ class TeensProductList extends Component {
                     <a target="_blank" key={key} href={item.url}>
                         <img src={item.image} key={key} />
                         <div>{item.item}</div>
+                        <div>{item.category}</div>
+                        <div>{item.price}</div>
                     </a>
                 
                 ))}
