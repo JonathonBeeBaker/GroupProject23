@@ -70,7 +70,7 @@ module.exports = function(app){
                 let product = new db.products(item);
                 product.save();
             });    
-                res.json(products);
+                res.json('Done');
         });
      
     });
