@@ -18,6 +18,8 @@ class App extends Component {
           <div>
           <Navbar color="info" dark expand="md">
           <NavbarBrand href="/"><h1>GIFTBOT</h1></NavbarBrand>
+          <br />
+          <NavbarBrand href="/"><h5>Find The Perfect Gift</h5></NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/components/savedSelections.js">Saved Selections</NavLink>
@@ -34,8 +36,9 @@ class App extends Component {
               <br />
               <br />
               <br />
-                <Route path="/" component={Home} exact />
+                
                 <Switch>
+                  <Route path="/" component={Home} exact />
                   <Route path="/kidsproductlist" component={KidsProductList}  />
                   <Route path="/teensproductlist" component={TeensProductList}  />
                   <Route path="/elderlyproductlist" component={ElderlyProductList}  /> 
