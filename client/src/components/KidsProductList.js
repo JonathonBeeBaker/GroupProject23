@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Container, Row, Col,  } from 'reactstrap';
 import "./Style.css";
 
+const style={
+    color: 'green'
+}
 
 class KidsProductList extends Component {
     state = {
@@ -20,23 +23,20 @@ class KidsProductList extends Component {
         return (           
             <Container class="scrapeContainer">    
                 <Row>  
-                    <Col></Col>                    
-                        <Col class="column">
+                    {/* <Col></Col>                     */}
                         {this.state.products.slice(0, 6).map((item, key) => (
+                        <Col md="4">
                             <a target="_blank" key={key} href={item.url}>
-                                <img src={item.image} key={key} />
-                                <div>{item.item}</div>
+                                <img src={item.image} key={key} className='img-fluid'/>
+                                <div style={style}>{item.item}</div>
                                 <div>{item.category}</div>
                                 <div>{item.price}</div>
                             </a>                             
-                        ))} 
                         </Col>
-                    <Col></Col>
+                        ))} 
+                    {/* <Col></Col> */}
                 </Row>
-                    <Row>
-                        <Col><h1>Hello</h1></Col>
-                        
-                        </Row>               
+                                 
             </Container>
             
         );

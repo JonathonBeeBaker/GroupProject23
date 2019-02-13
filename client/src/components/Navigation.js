@@ -17,7 +17,7 @@ const Navigation = () => {
                     <NavLink to="/teensproductlist"><Button outline color="primary" size="lg">TEENS</Button> </NavLink>
                 </Col>
                 <Col>   
-                    <NavLink to="/elderlyproductlist"><Button outline color="secondary" size="lg">ELDERLY</Button></NavLink>
+                    <NavLink to="/elderlyproductlist"><Button outline color="secondary" size="lg">SENIORS</Button></NavLink>
                 </Col>  
                 <Col></Col>   
             </Row>

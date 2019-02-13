@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Container, Row, Col,  } from 'reactstrap';
 
 class TeensProductList extends Component {
     state = {
@@ -15,17 +16,23 @@ class TeensProductList extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.products.slice(0, 6).map((item, key) => (
-                    <a target="_blank" key={key} href={item.url}>
-                        <img src={item.image} key={key} />
-                        <div>{item.item}</div>
-                        <div>{item.category}</div>
-                        <div>{item.price}</div>
-                    </a>
-                
-                ))}
-            </div>
+            <Container>
+                <Row>
+                    <Col></Col>
+                    <Col>
+                        {this.state.products.slice(0, 6).map((item, key) => (
+                            <a target="_blank" key={key} href={item.url}>
+                                <img src={item.image} key={key} />
+                                <div>{item.item}</div>
+                                <div>{item.category}</div>
+                                <div>{item.price}</div>
+                            </a>
+                        
+                        ))}
+                        </Col>
+                    <Col></Col>
+                </Row>
+            </Container>
         );
     }
 }
