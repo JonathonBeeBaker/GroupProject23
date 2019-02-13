@@ -24,6 +24,7 @@
     "bootstrap": "^4.2.1",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "if-env": "^1.0.4",
     "mongoose": "^5.4.11",
     "react": "^16.8.1",
