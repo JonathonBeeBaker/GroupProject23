@@ -1,11 +1,17 @@
-import React from "react";
+import React , {Component} from "react";
+import Login from "./Login";
+
 import "./Style.css";
 import { Container, Row, Col, } from 'reactstrap';
+
+
    
 
 const Home = () => {
     return (
-        <div></div>
+        <Login>
+
+        </Login>
     )
 }
 
