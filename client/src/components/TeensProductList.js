@@ -18,19 +18,19 @@ class TeensProductList extends Component {
         return (
             <Container>
                 <Row>
-                    <Col></Col>
-                    <Col>
+                  
                         {this.state.products.slice(0, 6).map((item, key) => (
+                            <Col md="4">
                             <a target="_blank" key={key} href={item.url}>
-                                <img src={item.image} key={key} />
+                                <img src={item.image} key={key} className='img-fluid' />
                                 <div>{item.item}</div>
                                 <div>{item.category}</div>
                                 <div>{item.price}</div>
                             </a>
+                            </Col>
                         
                         ))}
-                        </Col>
-                    <Col></Col>
+                    
                 </Row>
             </Container>
         );
