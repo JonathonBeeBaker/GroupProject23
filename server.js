@@ -4,9 +4,28 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
 const mongo_uri= process.env.MONGODB_URI || "mongodb://localhost/project23"
+const session = require("express-session");
+app.set('trust proxy', 1);
+app.use(express.json());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {}
+}))
 require('./routes')(app);
 mongoose.connect(mongo_uri, { useNewUrlParser: true });
 
+
+app.get("/api/loggedIn", (req, res) =>) {
+  
+}
+
+app.post("/api/login", (req, res) =>{
+
+})
+
+app.get('/api/logout', )
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
