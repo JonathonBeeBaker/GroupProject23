@@ -23,7 +23,7 @@ class KidsProductList extends Component {
         return (           
             <Container class="scrapeContainer">    
                 <Row>  
-                    {/* <Col></Col>                     */}
+                   
                         {this.state.products.slice(0, 6).map((item, key) => (
                         <Col md="4">
                             <a target="_blank" key={key} href={item.url}>
@@ -34,7 +34,7 @@ class KidsProductList extends Component {
                             </a>                             
                         </Col>
                         ))} 
-                    {/* <Col></Col> */}
+                  
                 </Row>
                                  
             </Container>
