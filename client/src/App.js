@@ -9,6 +9,9 @@ import { Container, Row, Col, Navbar, NavbarBrand, Nav,
         NavItem, NavLink,  } from 'reactstrap';
 import Error from "./components/Error";
 import Navigation from "./components/Navigation";
+import Register from "./components/Register";
+import Login from './components/Login';
+import Hello from "./components/Hello";
 
 
 class App extends Component {
@@ -16,13 +19,14 @@ class App extends Component {
   render() {
     return (
         <BrowserRouter>
-          <div>
+          <Container>
           <Navbar color="info" dark expand="md">
           <NavbarBrand href="/"><h1>GIFTBOT</h1></NavbarBrand>
           <br />
           <NavbarBrand href="/"><h5>Find The Perfect Gift</h5></NavbarBrand>
             <Nav className="ml-auto" navbar>
               <NavItem>
+                <Hello />
                 <NavLink href="/components/savedSelections.js">Saved Selections</NavLink>
               </NavItem>
             </Nav>        
@@ -39,13 +43,15 @@ class App extends Component {
               <br />
                 
                 <Switch>
-                  <Route path="/" component={Home} exact />
+                  <Route exact path="/" component={Home} />
+                  <Route path="/login" component={Login} exact />
+                  <Route path="/register" component={Register} exact />
                   <Route path="/kidsproductlist" component={KidsProductList}  />
                   <Route path="/teensproductlist" component={TeensProductList}  />
-                  <Route path="/elderlyproductlist" component={ElderlyProductList}  /> 
+                  <Route path="/elderlyproductlist" component={ElderlyProductList}  />
                   <Route component={Error} />  
                 </Switch>
-          </div>
+          </Container>
          
         </BrowserRouter>
     );
