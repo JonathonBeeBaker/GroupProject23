@@ -13,15 +13,13 @@ app.use(session({
   saveUninitialized: true,
   cookie: {}
 }))
-require('./routes')(app);
 mongoose.connect(mongo_uri, { useNewUrlParser: true });
-
-app.get('/api/logout', )
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+require('./routes')(app);
 
 // Send every request to the React app
 // Define any API routes before this runs
