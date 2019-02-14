@@ -12,7 +12,7 @@ class Hello extends Component {
             this.setState({user: {}});
         });  
     }
-    componentWillUpdate() {
+    componentWillMount() {
         axios.get("/api/loggedIn").then(res => {
             if (res.data) {
                 this.setState({user: res.data});
