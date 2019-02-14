@@ -9,9 +9,7 @@ import { Container, Row, Col, } from 'reactstrap';
 
 const Home = () => {
     return (
-        <Login>
-
-        </Login>
+        <h1>Welcome</h1>
     )
 }
 

@@ -17,6 +17,6 @@ let userSchema = new Schema({ // Create a New Schema Constructor for News Articl
 
 });
 
-let user = mongoose.model("Product", productsSchema);
+let user = mongoose.model("user", userSchema);
 
 module.exports = user;

@@ -16,15 +16,6 @@ app.use(session({
 require('./routes')(app);
 mongoose.connect(mongo_uri, { useNewUrlParser: true });
 
-
-app.get("/api/loggedIn", (req, res) =>) {
-  
-}
-
-app.post("/api/login", (req, res) =>{
-
-})
-
 app.get('/api/logout', )
 
 // Serve up static assets (usually on heroku)

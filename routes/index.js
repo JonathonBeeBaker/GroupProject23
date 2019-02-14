@@ -5,48 +5,40 @@ const db = require('../models');
 
 
 module.exports = function(app){
-
-
     app.get("/api/loggedIn", (req, res) => {
-        db.user.findOne({_id: req.session.user_id}).then(user => res.json(user));  
+        db.user.findOne({_id: req.session.user_id}).then(user => {
+            res.json(user);
+        });  
     })
 
-app.post("/api/login", (req, res) =>{
-    const username = req.body.username;
-    const password = req.body.password;
-    db.user.findone({
-        username: username,
-        password: password
-    }).then(user => {
-        if (user) {
-            req.json.on.user_id = user._id;
-            res.json(user._id);
-        } else {
-            res.session.destroy();
-            res.json(null);
-        }
-    })
-    .catch(err => res.json(err));
+    app.post("/api/login", (req, res) =>{
+        const username = req.body.username;
+        const password = req.body.password;
+        db.user.findOne({
+            username: username,
+            password: password
+        }).then(user => {
+            if (user) {
+                req.session.user_id = user._id;
+                res.json(user);
+            } else {
+                res.session.destroy();
+                res.json(null);
+            }
+        })
+        .catch(err => res.json(err));
 
-});
+    });
 
-
-app.get('/api/logout', )
-
-
-    app.get('/api', function(req, res ) {
-
-        db.products.find({})
-        .then (products => res.json(products))
-        .catch(function(err){
-            return res.json(err);
-        }
-        
-        );
-       
-        res.json('working');
-    
-
+    app.post('/api/register', function (req, res) {
+        let user = new db.user(req.body);
+        user.save().then(newUser => {
+            req.session.user_id = newUser._id;
+            res.json(newUser);
+        }).catch(err => res.json(err));
+    });
+    app.get('/api/logout', function (req, res) {
+        req.session.destroy();
     });
 
 

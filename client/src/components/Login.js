@@ -1,36 +1,44 @@
 import React , {Component} from "react";
 
 import "./Style.css";
-import { Container, Row, Col, } from 'reactstrap';
-
-
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import axios from "axios";
    
 
 class Login extends Component {
     state = {
         username: "",
         password: ""
-      }; 
-      onChange = Login => this.setState({ [e.target.name]: e.target.value });
       }
+    onChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+    onSubmit = (e) => {
+        e.preventDefault();
+        axios.post("/api/login", this.state).then(res => {
+            this.setState(res.data);
+            this.forceUpdate();
+            this.props.history.push("/");
+        });
+    }
     render () {
         return (
             <div>
-                
-                <form>
-                    <label> Name:
-                        <input  type="Username" name="Username" value={this.state.username}/>
-                    </label>
-                    <br />
-                    <label> Password:
-                    <input type="password" value="Password" value={this.state.password}/>
-                    </label>
-                    <br />
-                    <input type="submit" value="submit" />
-                </form>
+                <h1>Login</h1>
+                <Form onSubmit={this.onSubmit}>
+                    <FormGroup>
+                        <Label for="username">Username</Label>
+                        <Input name="username" type="text" placeholder="example" onChange={this.onChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="password">Password</Label>
+                        <Input name="password" type="password" placeholder="********" onChange={this.onChange} />
+                    </FormGroup>
+                    <Button>Login</Button>
+                </Form>
                
             </div>
-        )
+        );
         
     }
 
